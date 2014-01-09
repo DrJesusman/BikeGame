@@ -8,6 +8,7 @@ public class BuildingScrollScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		buildingScrollSpeed = 8;
+		Physics.IgnoreLayerCollision(8,9);
 	}
 	
 	// Update is called once per frame

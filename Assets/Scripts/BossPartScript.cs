@@ -3,7 +3,9 @@ using System.Collections;
 
 public class BossPartScript : MonoBehaviour {
 	int health;
+	float maxHealth;
 	int armor;
+	float healthPercentage;
 	bool isDead;
 	bool exploded;
 	float timeKilled;
@@ -19,8 +21,12 @@ public class BossPartScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		isDead = false;
-		this.health = 10;
+		this.health = 20;
+		maxHealth = 20f;
 		bridge = GameObject.Find("BRIDGE");
+
+		Debug.Log(gameObject.renderer.material.color.r + " " + gameObject.renderer.material.color.g +
+		          " " + gameObject.renderer.material.color.r);
 	}
 	
 	// Update is called once per frame
@@ -59,10 +65,17 @@ public class BossPartScript : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionEnter(Collision other){
-		Debug.Log("Hit");
+	void OnTriggerEnter(Collider other){
 		if(other.gameObject.CompareTag("Bullet")){
 			health -=1;
+			healthPercentage = health / maxHealth;
+			/*Debug.Log("r " + gameObject.renderer.material.color.r * healthPercentage +
+			          " g " + gameObject.renderer.material.color.g * (1f - healthPercentage) +
+			          " b " + gameObject.renderer.material.color.b * (1f - healthPercentage));*/
+			gameObject.renderer.material.color = 
+				new Color(gameObject.renderer.material.color.r - 0.1f * healthPercentage, 
+				          gameObject.renderer.material.color.g * (1 - healthPercentage), 
+				          gameObject.renderer.material.color.b * (1 - healthPercentage), 1f);
 			Destroy(other.gameObject);
 		}
 		

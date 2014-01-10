@@ -17,14 +17,15 @@ public class ObstacleSpawnScript : MonoBehaviour {
 	void Start () {
 		difficulty = DifficultyScript.difficulty;
 		spawnSpeed = 10f;
-		lastSpawnTime = -0f;
+		lastSpawnTime = -20f;
 		floor = GameObject.Find("BRIDGE");
 		spawnPositionY = this.transform.position.y;// + (groundEnemy.transform.localScale.y);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Time.time - lastSpawnTime >= spawnSpeed / (0.5 * difficulty)){
+		if(Time.time - lastSpawnTime >= spawnSpeed / (DifficultyScript.difficulty)){
+			Debug.Log(spawnSpeed / (DifficultyScript.difficulty));
 			Spawn();
 			lastSpawnTime = Time.time;
 		}
@@ -32,6 +33,6 @@ public class ObstacleSpawnScript : MonoBehaviour {
 	
 	void Spawn(){
 		spawnPositionX = Random.Range(-0.5f, 0.51f);
-		GameObject.Instantiate(groundEnemy, new Vector3(spawnPositionX, spawnPositionY, 42f), Quaternion.identity);
+		GameObject.Instantiate(groundEnemy, new Vector3(spawnPositionX, spawnPositionY - 0.93f, 44f), Quaternion.identity);
 	}
 }

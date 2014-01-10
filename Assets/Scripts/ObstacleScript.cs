@@ -14,8 +14,11 @@ public class ObstacleScript : MonoBehaviour {
 	public GameObject childObject;
 	GameObject body;
 	GameObject car;
+	GameObject[] carChildren = new GameObject[40];
 	GameObject transparentChar;
 	GameObject solidChar;
+
+	float visibility = 20f;
 
 
 	// Use this for initialization
@@ -27,9 +30,15 @@ public class ObstacleScript : MonoBehaviour {
 		car = (GameObject)transparentChar.transform.FindChild("Car").gameObject;
 
 		solidChar.SetActive(false);
-		makeTransparent(body);
-		makeTransparent(car);
+		transparentChar.SetActive(true);
+		makeTransparent(body, visibility);
+		changeChildren(car, visibility);
 		StartCoroutine(flash());
+
+		for(int i = 0; i >= 39; i++){
+			Debug.Log("changing: " + car.transform.GetChild(0));
+		}
+
 
 	}
 	
@@ -41,13 +50,16 @@ public class ObstacleScript : MonoBehaviour {
 	}
 
 	IEnumerator flash(){
-		for(int i = numOfFlashes; i >= 0; i--){
-			makeTransparent(body);
-			car.SetActive(true);
-			yield return new WaitForSeconds(1.0f / difficulty);
-			makeInvisible(body);
-			car.SetActive(false);
-			yield return new WaitForSeconds(1.0f / difficulty);
+		for(float i = visibility; i >= 0; i--){
+			makeTransparent(body, i/100f);
+			changeChildren(car, i/100f);
+			i -= DifficultyScript.difficulty/2;
+			yield return new WaitForSeconds(0.05f);
+			//Debug.Log(car.renderer.sharedMaterial.color.a);
+			//car.SetActive(true);
+			/*makeInvisible(body);
+			makeInvisible(car);*/
+			//yield return new WaitForSeconds(1.0f / difficulty);
 		}
 		makeVisible(body);
 		car.SetActive(true);
@@ -57,11 +69,11 @@ public class ObstacleScript : MonoBehaviour {
 		sendObstacle = true;
 	}
 
-	void makeTransparent(GameObject g){
+	void makeTransparent(GameObject g, float percentage){
 		g.renderer.material.color = new Color(g.renderer.material.color.r,
 		                                        g.renderer.material.color.g,
 		                                        g.renderer.material.color.b,
-		                                        0.5f);
+		                                       percentage);
 	}
 
 	void makeInvisible(GameObject g){
@@ -76,5 +88,11 @@ public class ObstacleScript : MonoBehaviour {
 		                                      g.renderer.material.color.g,
 		                                      g.renderer.material.color.b,
 		                                      1f);
+	}
+
+	void changeChildren(GameObject g, float alpha){
+		foreach(Transform child in car.transform){
+			makeTransparent(child.gameObject, alpha);
+		}
 	}
 }

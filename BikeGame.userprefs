@@ -1,14 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyHealthScript.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BackGroundScrollScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyHealthScript.cs" Line="48" Column="108" />
-      <File FileName="Assets\Scripts\ObstacleScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ObstacleSpawnScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DifficultyScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyTestScript.cs" Line="61" Column="29" />
-      <File FileName="Assets\Scripts\BulletDestroyScript.cs" Line="48" Column="96" />
-      <File FileName="Assets\Scripts\PlayerVariablesScript.cs" Line="14" Column="1" />
+      <File FileName="Assets\Scripts\BackGroundScrollScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

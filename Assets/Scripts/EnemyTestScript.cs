@@ -41,7 +41,7 @@ public class EnemyTestScript : MonoBehaviour {
 			needNewPoint = false;
 		}
 		//StartCoroutine(rallyDebugDisplay());
-		transform.position = Vector3.Lerp(transform.position, nextRallyPoint - new Vector3(0f, 0.15f,0f), smooth * Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, nextRallyPoint, smooth * Time.deltaTime);
 	}
 
 	IEnumerator rallyDebugDisplay(){
@@ -85,4 +85,5 @@ public class EnemyTestScript : MonoBehaviour {
 		lastUsedPosition = rand;
 		rallyPointStorage = nextRallyPoint;
 	}
+	
 }

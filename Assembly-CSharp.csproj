@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\BuildingScrollScript.cs" />
      <Compile Include="Assets\Scripts\BulletDestroyScript.cs" />
      <Compile Include="Assets\Scripts\DifficultyScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyHealthScript.cs" />
      <Compile Include="Assets\Scripts\EnemyTestScript.cs" />
      <Compile Include="Assets\Scripts\FloorScroll.cs" />
      <Compile Include="Assets\Scripts\MonsterAnimationScript.cs" />

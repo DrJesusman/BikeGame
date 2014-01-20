@@ -8,6 +8,7 @@ public class BulletDestroyScript : MonoBehaviour {
 
 	public GameObject bulletHitParticle;
 	GameObject spawnedBulletParticle;
+
 	// Use this for initialization
 	void Start () {
 		bikePosition = GameObject.Find("biket").transform.position;
@@ -45,7 +46,6 @@ public class BulletDestroyScript : MonoBehaviour {
 			 collidedWith.gameObject.transform.position - (collidedWith.gameObject.transform.position - bikePosition).normalized/4, 
 			 Quaternion.identity);
 		spawnedBulletParticle.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
-		spawnedBulletParticle.transform.parent = collidedWith.gameObject.transform;
 		yield return new WaitForSeconds(0.25f);
 		GameObject.Destroy(spawnedBulletParticle);
 		GameObject.Destroy(this.gameObject);

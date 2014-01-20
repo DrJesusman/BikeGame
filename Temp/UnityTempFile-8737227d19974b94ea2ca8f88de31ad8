@@ -1,0 +1,56 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"F:/Program Files (x86)/Editor/Data/Managed/UnityEngine.dll"
+-r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll
+-r:"F:/Program Files (x86)/Editor/Data/Managed/UnityEditor.dll"
+-define:UNITY_ANDROID
+-define:ENABLE_MICROPHONE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_AUDIO_FMOD
+-define:ENABLE_MONO
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_GENERICS
+-define:ENABLE_SUBSTANCE
+-define:INCLUDE_WP8SUPPORT
+-define:ENABLE_WWW
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_WEBCAM
+-define:INCLUDE_METROSUPPORT
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_NETWORK
+-define:ENABLE_PHYSICS
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:UNITY_ANDROID_API
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_SHADOWS
+-define:ENABLE_AUDIO
+-define:ENABLE_NAVMESH_CARVING
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:UNITY_4_3_3
+-define:UNITY_4_3
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_WIN
+Assets/Scripts/AimTestScript.cs
+Assets/Scripts/BackGroundScrollScript.cs
+"Assets/Scripts/Boss Scripts/EyeballBossScript.cs"
+Assets/Scripts/BossPartScript.cs
+Assets/Scripts/BuildingScrollScript.cs
+Assets/Scripts/BulletDestroyScript.cs
+Assets/Scripts/DifficultyScript.cs
+Assets/Scripts/EnemyHealthScript.cs
+Assets/Scripts/EnemyTestScript.cs
+Assets/Scripts/FloorScroll.cs
+Assets/Scripts/MonsterAnimationScript.cs
+Assets/Scripts/ObstacleScript.cs
+Assets/Scripts/ObstacleSpawnScript.cs
+Assets/Scripts/PlayerCollisionScript.cs
+Assets/Scripts/PlayerController.cs
+Assets/Scripts/ShootingScript.cs
+-r:"F:/Program Files (x86)/Editor/Data/Mono\lib/mono/unity\System.Runtime.Serialization.dll"
+-r:"F:/Program Files (x86)/Editor/Data/Mono\lib/mono/unity\System.Xml.Linq.dll"
